@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de formulario de pago</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Ejemplo de formulario de pago</h2>
+    <div class="alert alert-danger mt-3" role="alert">
+      Faltan algunos campos
+    </div>
+    <form>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="cardNumber" class="form-label">Tarjeta #</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX">
+        </div>
+        <div class="col-md-3">
+          <label for="cvc" class="form-label">CVC #</label>
+          <input type="text" class="form-control" id="cvc" placeholder="0000">
+        </div>
+        <div class="col-md-3">
+          <label for="amount" class="form-label">Cantidad</label>
+          <div class="input-group">
+            <span class="input-group-text">€</span>
+            <input type="text" class="form-control" id="amount" placeholder="Cantidad">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">Primer nombre</label>
+          <input type="text" class="form-control" id="firstName">
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="lastName">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="city" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="city">
+        </div>
+        <div class="col-md-3">
+          <label for="state" class="form-label">Provincia</label>
+          <select class="form-select" id="state">
+            <option selected>Selecciona una provincia</option>
+            <option value="CA">Barcelona</option>
+            <option value="NY">Málaga</option>
+            <option value="TX">Valencia</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="postalCode" class="form-label">Codigo Postal</label>
+          <input type="text" class="form-control" id="postalCode">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Metodos de pago aceptados:</label>
+        <div>
+          <img src="data:image/png;base64,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" alt="Payment Methods" class="img-fluid custom-img">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="message" rows="3" placeholder="Añade algun mensaje aqui"></textarea>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-secondary me-2">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
